@@ -15,7 +15,3 @@ pub fn safeprint(hello: &Result<String, std::io::Error>) {
         Err(error) => println!("Error: {}", error),
     };
 }
-
-pub fn repeat() {
-    safeprint(&safegets());
-}
