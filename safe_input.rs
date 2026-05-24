@@ -15,3 +15,10 @@ pub fn safeprint(hello: &Result<String, std::io::Error>) {
         Err(error) => println!("Error: {}", error),
     };
 }
+
+pub fn getstring(wrapped_string: &Result<String, std::io::Error>, result: &mut String) {
+    match wrapped_string {
+        Ok(string) => *result = string.to_string(),
+        Err(_) => {}
+    };
+}
